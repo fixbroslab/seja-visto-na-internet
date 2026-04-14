@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apareça e Venda — Guia para Prestadores de Serviços</title>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1200568718654809');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {
+  content_name: 'Apareça e Venda',
+  content_category: 'Guia Digital',
+  value: 13.90,
+  currency: 'BRL'
+});
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1200568718654809&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #F97316;
+    --orange-dark: #ea6208;
+    --orange-light: #fff7ed;
+    --navy: #0f2341;
+    --navy-light: #1e3a5f;
+    --green: #16a34a;
+    --green-dark: #15803d;
+    --green-bg: #f0fdf4;
+    --text: #1a2332;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --white: #ffffff;
+    --gray-bg: #f8fafc;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ─── STICKY CTA BAR ─── */
+  .sticky-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--navy);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.25);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+  }
+  .sticky-bar.visible { transform: translateY(0); }
+  .sticky-bar .price-small {
+    color: var(--white);
+    font-size: 13px;
+    line-height: 1.3;
+  }
+  .sticky-bar .price-small strong { display: block; font-size: 20px; color: #fbbf24; }
+  .sticky-bar .btn-sticky {
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, #0a3d6b 60%, #0e4f82 100%);
+    padding: 28px 20px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(249,115,22,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(22,163,74,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(249,115,22,0.2);
+    border: 1px solid rgba(249,115,22,0.4);
+    color: #fdba74;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+  .hero-tag::before { content: '●'; font-size: 8px; animation: blink 1.5s infinite; }
+  @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 7vw, 42px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: #fbbf24;
+  }
+  .hero h1 .underline-orange {
+    position: relative;
+    display: inline;
+  }
+  .hero h1 .underline-orange::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -3px; right: 0;
+    height: 3px;
+    background: var(--orange);
+    border-radius: 2px;
+  }
+
+  .hero-sub {
+    color: #94b8d4;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 480px;
+  }
+  .hero-sub strong { color: #e2edf7; }
+
+  .hero-mockup {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 28px;
+    display: block;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    position: relative;
+  }
+  .hero-mockup-wrapper {
+    text-align: center;
+    position: relative;
+  }
+  .hero-mockup-wrapper::after {
+    content: '🔥 +847 downloads essa semana';
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-top: 10px;
+  }
+
+  /* Fake book mockup */
+  .book-cover {
+    width: 220px;
+    height: 290px;
+    background: linear-gradient(135deg, #0d3d6e, #0a5fa3);
+    border-radius: 4px 12px 12px 4px;
+    margin: 0 auto 28px;
+    box-shadow: -8px 8px 0 rgba(0,0,0,0.3), 0 20px 50px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .book-cover::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 12px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 4px 0 0 4px;
+  }
+  .book-cover .book-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7dd3fc;
+    margin-bottom: 8px;
+  }
+  .book-cover h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: #fbbf24;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .book-cover p {
+    font-size: 10px;
+    color: #bfdbfe;
+    line-height: 1.4;
+  }
+  .book-cover .book-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+
+  .btn-hero {
+    display: block;
+    background: linear-gradient(135deg, var(--green), #15803d);
+    color: white;
+    text-align: center;
+    padding: 18px 24px;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(22,163,74,0.4);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-hero:active { transform: scale(0.98); }
+  .btn-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    animation: shimmer 2.5s infinite;
+  }
+  @keyframes shimmer { to { left: 100%; } }
+  .btn-hero .btn-price { font-size: 13px; font-weight: 500; opacity: 0.9; }
+  .btn-hero .btn-main { display: block; font-size: 18px; }
+
+  .hero-trust {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .hero-trust span {
+    color: #94b8d4;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* ─── PROOF BAR ─── */
+  .proof-bar {
+    background: var(--orange-light);
+    border-top: 2px solid #fed7aa;
+    border-bottom: 2px solid #fed7aa;
+    padding: 14px 20px;
+    text-align: center;
+  }
+  .proof-bar p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #9a3412;
+    line-height: 1.4;
+  }
+  .proof-bar .stars { color: #f59e0b; font-size: 16px; }
+
+  /* ─── SECTIONS SHARED ─── */
+  section { padding: 48px 20px; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 10px;
+  }
+
+  h2.section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(24px, 6vw, 34px);
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+  h2.section-title em { font-style: normal; color: var(--orange); }
+
+  .section-body {
+    color: #475569;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ─── PAIN SECTION ─── */
+  .pain-section { background: var(--gray-bg); }
+
+  .pain-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .pain-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 4px solid #ef4444;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .pain-card .icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+  .pain-card strong { display: block; font-size: 15px; color: var(--navy); margin-bottom: 3px; }
+  .pain-card p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+  /* ─── FOR WHO ─── */
+  .for-who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .for-who-item {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 12px;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .for-who-item:hover { border-color: var(--orange); transform: translateY(-2px); }
+  .for-who-item .emoji { font-size: 32px; margin-bottom: 8px; display: block; }
+  .for-who-item span { font-size: 13px; font-weight: 600; color: var(--navy); display: block; }
+
+  /* ─── WHAT'S INSIDE ─── */
+  .inside-section { background: var(--navy); }
+  .inside-section .section-label { color: #7dd3fc; }
+  .inside-section h2.section-title { color: white; }
+  .inside-section h2.section-title em { color: #fbbf24; }
+  .inside-section .section-body { color: #94b8d4; }
+
+  .modules-list {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .module-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .module-num {
+    width: 36px; height: 36px;
+    background: var(--orange);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    color: white;
+    flex-shrink: 0;
+  }
+  .module-item strong {
+    display: block;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  .module-item span {
+    font-size: 13px;
+    color: #94b8d4;
+  }
+
+  /* ─── PROOF / TESTIMONIALS ─── */
+  .testimonials-section { background: var(--gray-bg); }
+
+  .testimonials-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .testimonial-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 18px;
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px; left: 18px;
+    font-family: 'Fraunces', serif;
+    font-size: 60px;
+    color: var(--orange);
+    line-height: 1;
+    opacity: 0.5;
+  }
+  .testimonial-stars { color: #f59e0b; font-size: 14px; margin-bottom: 10px; }
+  .testimonial-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .author-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0d3d6e, #0a5fa3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .author-info strong {
+    display: block;
+    font-size: 14px;
+    color: var(--navy);
+  }
+  .author-info span {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ─── RESULTS ─── */
+  .results-section { background: white; }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .result-card {
+    background: var(--green-bg);
+    border: 1px solid #bbf7d0;
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+  .result-card .result-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+  .result-card strong { display: block; font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+
+  /* ─── OFFER ─── */
+  .offer-section {
+    background: linear-gradient(160deg, var(--navy) 0%, #0a3d6b 100%);
+  }
+  .offer-section .section-label { color: #fbbf24; }
+  .offer-section h2.section-title { color: white; }
+
+  .offer-box {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 24px 20px;
+    margin-top: 24px;
+  }
+
+  .offer-includes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .offer-includes li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e2edf7;
+    font-size: 15px;
+  }
+  .offer-includes li .check {
+    width: 22px; height: 22px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .price-display {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .price-original {
+    font-size: 14px;
+    color: #94b8d4;
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+  .price-actual {
+    font-family: 'Fraunces', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: #fbbf24;
+    line-height: 1;
+  }
+  .price-actual sup { font-size: 22px; vertical-align: super; }
+  .price-actual sub { font-size: 18px; vertical-align: baseline; }
+  .price-desc {
+    font-size: 13px;
+    color: #94b8d4;
+    margin-top: 4px;
+  }
+
+  .btn-offer {
+    display: block;
+    background: linear-gradient(135deg, var(--green), #15803d);
+    color: white;
+    text-align: center;
+    padding: 20px 24px;
+    border-radius: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(22,163,74,0.45);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-offer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    animation: shimmer 2.5s infinite;
+  }
+  .btn-offer .btn-sub {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.85;
+    margin-top: 2px;
+  }
+
+  .guarantee-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .guarantee-box .shield { font-size: 28px; flex-shrink: 0; }
+  .guarantee-box strong { display: block; color: white; font-size: 14px; margin-bottom: 4px; }
+  .guarantee-box p { color: #94b8d4; font-size: 13px; line-height: 1.5; }
+
+  /* ─── FAQ ─── */
+  .faq-section { background: var(--gray-bg); }
+
+  .faq-list { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+
+  .faq-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 18px 18px;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .faq-q .arrow { font-size: 18px; transition: transform 0.3s; flex-shrink: 0; }
+  .faq-q.open .arrow { transform: rotate(180deg); }
+  .faq-a {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+  .faq-a.open { max-height: 300px; padding: 0 18px 16px; }
+
+  /* ─── FINAL CTA ─── */
+  .final-cta {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    padding: 48px 20px;
+    text-align: center;
+  }
+  .final-cta h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(24px, 6vw, 36px);
+    font-weight: 900;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .final-cta p {
+    color: rgba(255,255,255,0.85);
+    font-size: 16px;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+  .btn-final {
+    display: block;
+    background: white;
+    color: #ea580c;
+    text-align: center;
+    padding: 20px 24px;
+    border-radius: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .btn-final .sub { display: block; font-size: 13px; font-weight: 500; color: #9a3412; margin-top: 2px; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy);
+    padding: 24px 20px;
+    text-align: center;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  footer a { color: #94b8d4; text-decoration: none; }
+
+  /* ─── DIVIDER ─── */
+  .wave-divider { width: 100%; overflow: hidden; line-height: 0; display: block; }
+  .wave-divider svg { display: block; }
+
+  /* ─── FADE IN ─── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── DESKTOP ─── */
+  @media (min-width: 600px) {
+    .hero { padding: 48px 32px 64px; }
+    .hero-inner { max-width: 520px; }
+    section { padding: 64px 32px; }
+    .for-who-grid { grid-template-columns: repeat(3, 1fr); }
+    .results-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  @media (min-width: 900px) {
+    .container { max-width: 680px; margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="price-small">
+    Acesso imediato<br>
+    <strong>R$ 13,90</strong>
+  </div>
+  <a href="https://pay.kiwify.com.br/obY4XNX" class="btn-sticky" onclick="trackCheckout('sticky_bar')">
+    📲 Quero o Guia Agora
+  </a>
+</div>
+
+<div class="container">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Guia Prático para Prestadores de Serviço</div>
+
+    <h1>
+      Seu serviço <em>não aparece</em> na internet — e você perde clientes <span class="underline-orange">todo&nbsp;dia</span>
+    </h1>
+
+    <p class="hero-sub">
+      Aprenda a se cadastrar no Google, organizar seu WhatsApp e criar perfis profissionais no Instagram e Facebook — <strong>do zero, sem complicação, em 7 passos simples.</strong>
+    </p>
+
+    <!-- BOOK MOCKUP -->
+    <div class="hero-mockup-wrapper">
+      <div class="book-cover">
+        <div class="book-tag">Guia Prático — 2026</div>
+        <div class="book-icon">📱</div>
+        <h2>Apareça e Venda</h2>
+        <p>Como vender seu serviço online do zero, sem complicação</p>
+      </div>
+    </div>
+
+    <a href="https://pay.kiwify.com.br/obY4XNX" class="btn-hero" onclick="trackCheckout('hero')">
+      <span class="btn-price">Por apenas R$ 13,90 • Acesso imediato</span>
+      <span class="btn-main">📲 Quero Aparecer no Google Agora</span>
+    </a>
+
+    <div class="hero-trust">
+      <span>🔒 Pagamento seguro</span>
+      <span>✅ Acesso imediato</span>
+      <span>↩️ Garantia 7 dias</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar fade-in">
+  <p>
+    <span class="stars">★★★★★</span> &nbsp;
+    Mais de <strong>2.400 prestadores de serviço</strong> já baixaram e começaram a aparecer na internet
+  </p>
+</div>
+
+<!-- PAIN SECTION -->
+<section class="pain-section fade-in">
+  <div class="section-label">O problema</div>
+  <h2 class="section-title">Você trabalha bem — mas <em>ninguém te encontra</em></h2>
+  <p class="section-body">O cliente pesquisa no Google, no WhatsApp, no Instagram. Se você não está lá, ele contrata outro. Simples assim.</p>
+
+  <div class="pain-cards">
+    <div class="pain-card">
+      <div class="icon">😰</div>
+      <div>
+        <strong>Clientes somem para a concorrência</strong>
+        <p>Quem aparece no Google Meu Negócio recebe os pedidos. Quem não aparece… fica esperando indicação.</p>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="icon">📵</div>
+      <div>
+        <strong>WhatsApp desorganizado afasta clientes</strong>
+        <p>Perfil sem foto profissional, sem resposta automática — o cliente desconfia e vai embora.</p>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="icon">😤</div>
+      <div>
+        <strong>Redes sociais parecem complicadas demais</strong>
+        <p>Você sabe que precisa estar no Instagram, mas não sabe por onde começar sem perder tempo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section class="fade-in" style="background: white;">
+  <div class="section-label">Para quem é</div>
+  <h2 class="section-title">Esse guia foi feito <em>pra você</em> se você trabalha como…</h2>
+
+  <div class="for-who-grid">
+    <div class="for-who-item">
+      <span class="emoji">🔧</span>
+      <span>Eletricista</span>
+    </div>
+    <div class="for-who-item">
+      <span class="emoji">🖌️</span>
+      <span>Pintor</span>
+    </div>
+    <div class="for-who-item">
+      <span class="emoji">🚿</span>
+      <span>Encanador</span>
+    </div>
+    <div class="for-who-item">
+      <span class="emoji">💅</span>
+      <span>Manicure</span>
+    </div>
+    <div class="for-who-item">
+      <span class="emoji">🏠</span>
+      <span>Pedreiro</span>
+    </div>
+    <div class="for-who-item">
+      <span class="emoji">✂️</span>
+      <span>Cabeleireiro</span>
+    </div>
+    <div class="for-who-item">
+      <span class="emoji">🛠️</span>
+      <span>Marceneiro</span>
+    </div>
+    <div class="for-who-item">
+      <span class="emoji">🐾</span>
+      <span>Pet sitter</span>
+    </div>
+    <div class="for-who-item">
+      <span class="emoji">👩‍🍳</span>
+      <span>Confeiteira</span>
+    </div>
+  </div>
+
+  <p style="margin-top: 20px; font-size: 15px; color: var(--text-muted); background: #fff7ed; border-left: 3px solid var(--orange); padding: 12px 14px; border-radius: 0 8px 8px 0; line-height: 1.6;">
+    ✅ <strong>Funciona mesmo se você nunca mexeu com internet antes.</strong> O guia ensina tudo do zero, com prints e passo a passo simples.
+  </p>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside-section fade-in">
+  <div class="section-label">O que você vai aprender</div>
+  <h2 class="section-title">Tudo que seu negócio precisa para <em>aparecer online</em></h2>
+  <p class="section-body">7 passos organizados em ordem. Siga um por um e em poucas horas você já está visível na internet.</p>
+
+  <div class="modules-list">
+    <div class="module-item">
+      <div class="module-num">1</div>
+      <div>
+        <strong>E-mail Profissional</strong>
+        <span>Crie um Gmail com seu nome e serviço para usar em tudo</span>
+      </div>
+    </div>
+    <div class="module-item">
+      <div class="module-num">2</div>
+      <div>
+        <strong>Google Meu Negócio</strong>
+        <span>Apareça no mapa quando alguém da sua região pesquisar</span>
+      </div>
+    </div>
+    <div class="module-item">
+      <div class="module-num">3</div>
+      <div>
+        <strong>WhatsApp Business</strong>
+        <span>Perfil que passa confiança + mensagens prontas para atender</span>
+      </div>
+    </div>
+    <div class="module-item">
+      <div class="module-num">4</div>
+      <div>
+        <strong>Instagram e Facebook Profissional</strong>
+        <span>Como criar, o que postar e como aparecer nos grupos do bairro</span>
+      </div>
+    </div>
+    <div class="module-item">
+      <div class="module-num">5</div>
+      <div>
+        <strong>Fotos que Convencem</strong>
+        <span>Como fotografar seu trabalho com o próprio celular</span>
+      </div>
+    </div>
+    <div class="module-item">
+      <div class="module-num">6</div>
+      <div>
+        <strong>Mensagens que Fecham Serviço</strong>
+        <span>Templates prontos para copiar e adaptar no WhatsApp</span>
+      </div>
+    </div>
+    <div class="module-item">
+      <div class="module-num">7</div>
+      <div>
+        <strong>Avaliações e Indicações</strong>
+        <span>Como pedir 5 estrelas no Google e multiplicar seus clientes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section fade-in">
+  <div class="section-label">Quem já usou</div>
+  <h2 class="section-title">O que <em>prestadores de serviço</em> estão dizendo</h2>
+
+  <div class="testimonials-list">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">Eu tinha vergonha de não saber mexer com internet. O guia explicou tudo tão simples que consegui criar meu Google Meu Negócio no mesmo dia. Na semana seguinte já tinha recebido 2 ligações de clientes novos.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">👷</div>
+        <div class="author-info">
+          <strong>Roberto S.</strong>
+          <span>Eletricista — São Paulo, SP</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">Minha filha sempre falava pra eu colocar meu trabalho na internet mas eu não sabia nem por onde começar. Com esse guia fiz tudo sozinha! Agora tenho Instagram, WhatsApp Business e já aparece no Google. Muito bom!</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">💅</div>
+        <div class="author-info">
+          <strong>Ana Paula M.</strong>
+          <span>Manicure — Belo Horizonte, MG</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">Trabalho com pintura há 15 anos e dependia só de indicação. Segui o passo a passo do guia e em 3 dias já tinha perfil profissional, fotos do meu trabalho postadas e até consegui meu primeiro cliente pelo Google. Vale muito mais que o preço.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">🖌️</div>
+        <div class="author-info">
+          <strong>Marcos A.</strong>
+          <span>Pintor — Contagem, MG</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results-section fade-in">
+  <div class="section-label">O que muda na prática</div>
+  <h2 class="section-title">Depois de seguir o guia você vai…</h2>
+
+  <div class="results-grid">
+    <div class="result-card">
+      <span class="result-icon">📍</span>
+      <strong>Aparecer no Google da sua cidade</strong>
+    </div>
+    <div class="result-card">
+      <span class="result-icon">💬</span>
+      <strong>Receber clientes direto no WhatsApp</strong>
+    </div>
+    <div class="result-card">
+      <span class="result-icon">⭐</span>
+      <strong>Ter avaliações no Google que vendem por você</strong>
+    </div>
+    <div class="result-card">
+      <span class="result-icon">📱</span>
+      <strong>Ter perfis profissionais prontos nas redes sociais</strong>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer-section fade-in">
+  <div class="section-label">Oferta especial</div>
+  <h2 class="section-title">Tudo isso por menos que um lanche</h2>
+
+  <div class="offer-box">
+    <ul class="offer-includes">
+      <li>
+        <span class="check">✓</span>
+        Guia completo em PDF — acesso para sempre
+      </li>
+      <li>
+        <span class="check">✓</span>
+        7 passos organizados do zero ao funcionando
+      </li>
+      <li>
+        <span class="check">✓</span>
+        Templates prontos de mensagens para WhatsApp
+      </li>
+      <li>
+        <span class="check">✓</span>
+        Exemplos reais de perfis profissionais
+      </li>
+      <li>
+        <span class="check">✓</span>
+        Funciona no celular, tablet ou computador
+      </li>
+    </ul>
+
+    <div class="price-display">
+      <p class="price-original">De R$ 47,00</p>
+      <p class="price-actual"><sup>R$</sup> 13<sub>,90</sub></p>
+      <p class="price-desc">pagamento único • acesso imediato</p>
+    </div>
+
+    <a href="https://pay.kiwify.com.br/obY4XNX" class="btn-offer" onclick="trackCheckout('offer_box')">
+      ✅ Quero Aparecer na Internet Agora
+      <span class="btn-sub">Clique e garanta por R$ 13,90</span>
+    </a>
+
+    <div class="guarantee-box">
+      <div class="shield">🛡️</div>
+      <div>
+        <strong>Garantia de 7 dias — sem perguntas</strong>
+        <p>Se você não ficar satisfeito por qualquer motivo, devolvemos 100% do seu dinheiro. Sem burocracia, sem enrolação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section fade-in">
+  <div class="section-label">Dúvidas frequentes</div>
+  <h2 class="section-title">Ficou com <em>alguma dúvida?</em></h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Precisa saber mexer com computador?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-a">Não. O guia foi criado especialmente para quem nunca mexeu com internet antes. Cada passo tem uma explicação simples, com exemplos do dia a dia. Se você sabe usar o WhatsApp, consegue seguir o guia.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Em quanto tempo consigo ver resultado?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-a">Seguindo o passo a passo, em poucas horas você já está com Google Meu Negócio criado e WhatsApp Business configurado. Novos clientes podem começar a te encontrar já nos primeiros dias.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Funciona para qualquer tipo de serviço?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-a">Sim. O guia serve para qualquer prestador de serviço local: eletricista, pintor, encanador, manicure, pedreiro, diarista, cabeleireiro, mecânico, jardineiro e muito mais.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Como recebo o guia após a compra?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-a">Imediatamente após o pagamento você recebe um e-mail com o link para baixar o PDF. Acesso instantâneo, sem espera.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        E se eu não gostar?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-a">Você tem 7 dias de garantia total. Se não ficou satisfeito, é só pedir o reembolso e devolvemos 100% do valor pago. Sem questionamentos.</div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<!-- FINAL CTA -->
+<div class="final-cta fade-in">
+  <h2>Chega de perder cliente pra quem aparece e você não</h2>
+  <p>Por R$ 13,90 você aprende a construir sua presença online do zero. Hoje mesmo.</p>
+  <a href="https://pay.kiwify.com.br/obY4XNX" class="btn-final" onclick="trackCheckout('final_cta')">
+    📲 Quero o Guia Agora — R$ 13,90
+    <span class="sub">Acesso imediato • Garantia 7 dias</span>
+  </a>
+</div>
+
+<footer>
+  <p>© 2026 Apareça e Venda — Todos os direitos reservados</p>
+  <p style="margin-top: 6px;">
+    <a href="#">Termos de Uso</a> &nbsp;•&nbsp;
+    <a href="#">Política de Privacidade</a> &nbsp;•&nbsp;
+    <a href="#">Suporte</a>
+  </p>
+</footer>
+
+<script>
+  // Meta Pixel — InitiateCheckout
+  function trackCheckout(position) {
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'InitiateCheckout', {
+        content_name: 'Apareça e Venda',
+        value: 13.90,
+        currency: 'BRL',
+        content_type: 'product',
+        contents: [{ id: 'apareca-e-venda', quantity: 1 }]
+      });
+    }
+  }
+
+  // Sticky bar
+  const stickyBar = document.getElementById('stickyBar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      stickyBar.classList.add('visible');
+    } else {
+      stickyBar.classList.remove('visible');
+    }
+  });
+
+  // Fade in on scroll
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // FAQ
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(b => {
+      b.classList.remove('open');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+</script>
+</body>
+</html>
